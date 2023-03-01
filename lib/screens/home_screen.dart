@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  static String pinCode = '';
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -27,6 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             //?? text field for pin code ->
             TextField(
+              onChanged: (data) {
+                HomeScreen.pinCode = data;
+              },
               style: const TextStyle(
                 fontFamily: 'poppins_bold',
                 letterSpacing: 1.2,
